@@ -21,19 +21,19 @@ public class Application implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		// Inicialização das dependências
-    LivroView livroView = new LivroView();
-    LivroDAO livroDAO = new LivroDAO();
-    LivroController livroController = new LivroController(livroDAO);
-
-    // Inicialização do Banco de Dados
-    DBConfig.createTables();
-
-    // Inicialização da CLI
-    Scanner scanner = new Scanner(System.in);
-    SistemaBiblioteca sistema = new SistemaBiblioteca(livroController, livroView, scanner);
-
-    // Inicialização do sistema
-    sistema.iniciar();
+		LivroView livroView = new LivroView();
+		LivroDAO livroDAO = new LivroDAO();
+		LivroController livroController = new LivroController(livroDAO);
+		
+		// Inicialização do Banco de Dados
+		DBConfig.createTables();
+		
+		// Inicialização da CLI
+		Scanner scanner = new Scanner(System.in);
+		SistemaBiblioteca sistema = new SistemaBiblioteca(livroController, livroView, scanner);
+		
+		// Inicialização do sistema
+		sistema.iniciar();
 	}
 
 }
